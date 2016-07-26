@@ -9,6 +9,6 @@ Libraries used:
 - ButterKnife
 - Glide
 
-Screenshots:
+#Screenshots:
 
 ![Alt text](/Screenshot-main.png "Main activity") ![Alt text](/Screenshot-detail.png "Detail activity")
