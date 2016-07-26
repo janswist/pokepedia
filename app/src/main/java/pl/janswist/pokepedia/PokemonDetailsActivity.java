@@ -25,7 +25,7 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class PokemonDetails extends AppCompatActivity {
+public class PokemonDetailsActivity extends AppCompatActivity {
 
     private List<String> abilites = new ArrayList<>();
     private int pokemonNumber;
@@ -73,7 +73,18 @@ public class PokemonDetails extends AppCompatActivity {
     }
 
     void cacheData(){
-        keeper.setPokemonAbility(pokemonNumber); // TODO
+        if( isFirstPokemonInSession()|| hasUserSelectedAnotherPokemon()){
+            keeper.setPokemonNumber(pokemonNumber);
+            keeper.setPokemonAbility();
+        }
+    }
+
+    boolean isFirstPokemonInSession(){
+        return keeper.getPokemonNumber() == 0;
+    }
+
+    boolean hasUserSelectedAnotherPokemon(){
+        return keeper.getPokemonNumber() != pokemonNumber;
     }
 
     void getPokemonAbility(){
@@ -103,5 +114,6 @@ public class PokemonDetails extends AppCompatActivity {
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         pokemonAbility.unsubscribe();
+        getPokemonAbility();
     }
 }

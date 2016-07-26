@@ -19,6 +19,7 @@ public class SingletonKeeper {
     private PokemonService pokemonService = p.create(PokemonService.class);
     private Observable<PokemonCatalog> pokemonCatalogRequest = getPokemonService().getFullPokedex().cache();
     private Observable<PokemonApi> pokemonAbility;
+    private int pokemonNumber = 0;
 
     public static SingletonKeeper getInstance() {
         return ourInstance;
@@ -47,7 +48,17 @@ public class SingletonKeeper {
         return pokemonAbility;
     }
 
-    public void setPokemonAbility(int pokemonNumber) {
+    public void setPokemonAbility() {
         this.pokemonAbility = getPokemonService().getPokemonAbility(String.valueOf(pokemonNumber)).cache();
     }
+
+    public int getPokemonNumber() {
+        return pokemonNumber;
+    }
+
+    public void setPokemonNumber(int pokemonNumber) {
+        this.pokemonNumber = pokemonNumber;
+    }
+
+
 }

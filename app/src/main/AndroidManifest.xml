@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="pl.janswist.pokepedia.PokemonDetails"
+        <activity android:name=".PokemonDetailsActivity"
             android:theme="@style/ActivityDialog">
 
         </activity>

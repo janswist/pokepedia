@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         String pokemonName = pokemon.getName().substring(0,1).toUpperCase() + pokemon.getName().substring(1);
         int pokemonNumber = Utils.getPokemonNumberFromUrl(pokemon);
 
-        Intent i = new Intent(this, PokemonDetails.class);
+        Intent i = new Intent(this, PokemonDetailsActivity.class);
         i.putExtra(POKEMON_NAME, pokemonName);
         i.putExtra(POKEMON_NUMBER, pokemonNumber);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
