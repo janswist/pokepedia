@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pokepedia</string>
+    <string name="search_title">Search title</string>
+
+    <string name="pokemon_name">Pokemon name</string>
+    <string name="pokemon_no">Pokemon no. %s</string>
+    <string name="pokemon_abilities">ABILITIES:</string>
+    <string name="search_pokemon">Search by name or number...</string>
+</resources>
