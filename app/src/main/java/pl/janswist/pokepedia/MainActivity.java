@@ -154,6 +154,5 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         super.onRestoreInstanceState(savedInstanceState);
         pokemonCatalog.unsubscribe();
         getFullPokeDex();
-        Log.i("asd", "aaaabbbb");
     }
 }
